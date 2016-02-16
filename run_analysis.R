@@ -54,4 +54,4 @@ both_avgs <- both_m[,lapply(.SD,mean), by=list(activity_id,subject_id)]
 
 #checks if an output directory exists, creates one if not, and writes .csv for
 if(!file.exists("~/data/output")){dir.create("~/data/output")}
-write.csv(x = both_avgs, "~/data/output/summary_avgs.csv")
+write.table(x = both_avgs, "~/data/output/summary_avgs.txt", row.names = FALSE)
